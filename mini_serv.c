@@ -144,7 +144,7 @@ int main(int argc, char **argv)
 					if (recv_ret <= 0)
 						break;
 				}
-				if (recv_ret != 1)
+				if (recv_ret == 0) // Recv returns 0 when client disconneted
 					rm_client(fd);
 				client_msg(fd);
 			}
