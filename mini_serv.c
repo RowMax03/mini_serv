@@ -64,10 +64,8 @@ void client_msg(int fd)
 			start = i + 1;
 		}
 	}
-    if (start < len)
-        memmove(recieve, &recieve[start], len - start);
-    else
-        bzero(&recieve, sizeof(recieve));
+
+	bzero(&recieve, sizeof(recieve));
 }
 
 void server_msg(int id, char flag)
